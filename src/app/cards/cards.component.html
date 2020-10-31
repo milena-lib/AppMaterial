@@ -1,3 +1,7 @@
+<!-- <section class="example-section">
+  <mat-checkbox class="example-margin" color="primary" [(ngModel)]="checked">Checked</mat-checkbox>
+</section>
+{{checked}} -->
 <!-- <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -17,6 +21,62 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card> -->
-<!-- <mat-card *ng>
+<!-- <div class="cards">
+  <div *ngFor="let card of cardsList">
+    <mat-card class="card">
+      <div class="price" [innerHTML]="checked ? card.price : card.priceNotVat">{{card.price}} &#8362;</div>
+      <div class="text">{{card.text}}</div>
+    </mat-card>
+  </div>
+</div> -->
 
-</mat-card> -->
+
+
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
+    <mat-card class="mat-elevation-z4" >
+      <mat-card-header>
+        <mat-card-title>Mountains {{num}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="./../assets/images/mountains.jpg">
+      <mat-card-content>
+        <p>
+          The Himalayas is a mountain range in Asia.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+
+<div class='card-container'>
+  <div class='flippable-card' [ngClass]="{'flipped':flipped}" (click)='flipped = !flipped'>
+    <mat-card class=''>
+      <mat-card-title>Booya</mat-card-title>
+    </mat-card>
+    <mat-card class='back'>
+        <mat-card-title>to ya</mat-card-title>
+    </mat-card>
+  </div>
+</div>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
