@@ -42,6 +42,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { GridComponent } from './grid/grid.component';
 
 
 const modules = [
@@ -86,7 +87,8 @@ const modules = [
     AppComponent,
     ContactsComponent,
     HomeComponent,
-    CardsComponent
+    CardsComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
