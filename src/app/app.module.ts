@@ -13,13 +13,15 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CardsComponent } from './cards/cards.component';
+import { SignatureComponent } from './signature/signature.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     HomeComponent,
-    CardsComponent
+    CardsComponent,
+    SignatureComponent
   ],
   imports: [
     BrowserModule,
