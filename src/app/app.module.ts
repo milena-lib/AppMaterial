@@ -44,7 +44,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { GridComponent } from './grid/grid.component';
-
+import { ProductListModule } from '@bit/milena-lib.angular-tutorial.product-list';
+import { SwapComponent } from './swap/swap/swap.component';
+import { DeliveryComponent } from './swap/delivery/delivery/delivery.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const modules = [
   ReactiveFormsModule,
@@ -90,12 +93,15 @@ const modules = [
     HomeComponent,
     CardsComponent,
     SignatureComponent,
-    GridComponent
+    GridComponent,
+    SwapComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ProductListModule,
     FormsModule,
     modules
   ],

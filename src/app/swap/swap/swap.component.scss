@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+}
+
+.right-side,
+.left-side {
+    padding: 5px;
+    box-sizing: border-box;
+    width: 50%;
+}
