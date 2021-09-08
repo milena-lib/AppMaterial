@@ -20,7 +20,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRippleModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { OverlayModule } from '@angular/cdk/overlay';
+import { OverlayContainer, OverlayModule } from '@angular/cdk/overlay';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { PortalModule } from '@angular/cdk/portal';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -44,10 +44,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { GridComponent } from './grid/grid.component';
-import { ProductListModule } from '@bit/milena-lib.angular-tutorial.product-list';
+// import { ProductListModule } from '@bit/milena-lib.angular-tutorial.product-list';
 import { SwapComponent } from './swap/swap/swap.component';
-import { DeliveryComponent } from './swap/delivery/delivery/delivery.component';
+import { DeliveryComponent } from './swap/delivery/delivery.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { OverlayComponent } from './swap/overlay/overlay.component';
+
+import { ClickOutsideModule } from 'ng-click-outside';
 
 const modules = [
   ReactiveFormsModule,
@@ -83,7 +86,8 @@ const modules = [
   MatRadioModule,
   MatDatepickerModule,
   MatTooltipModule,
-  FlexLayoutModule
+  FlexLayoutModule,
+  DragDropModule,
 ];
 
 @NgModule({
@@ -95,21 +99,23 @@ const modules = [
     SignatureComponent,
     GridComponent,
     SwapComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    OverlayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ProductListModule,
+    // ProductListModule,
     FormsModule,
+    ClickOutsideModule,
     modules
   ],
   exports: [
     BrowserAnimationsModule,
     modules
   ],
-  providers: [],
+  providers: [{provide: OverlayContainer}],
   bootstrap: [AppComponent]
   // schemas: [NO_ERRORS_SCHEMA]
 })

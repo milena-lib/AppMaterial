@@ -1,0 +1,11 @@
+<div class="container">
+    <a href="javascript:void(0)" (click)="openShowBox($event)">show box</a>
+    <div class="myBox" 
+      (clickOutside)="onClickedOutside($event)" 
+      *ngIf="showBox"
+      >
+      <div class="text">Click outside this box to hide</div>
+      
+      
+    </div>
+</div>
