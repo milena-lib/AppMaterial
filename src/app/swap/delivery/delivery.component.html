@@ -1,6 +1,6 @@
 <div class="container" #overlayContainer>
 
-    <button (click)="openDialog($event)">Open a draggable dialog</button>
+    <!-- <button (click)="openDialog($event)">Open a draggable dialog</button>
 
     <div class="example-boundary">
         <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag (clickOutside)="onClickedOutside($event)" 
@@ -19,6 +19,15 @@
 
                 <button mat-raised-button color="primary">Click</button>
             </form>
+        </div>
+    </div> -->
+
+    <button (click)="openDialog($event)">Open a draggable dialog</button>
+
+    <div class="example-boundary">
+        <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag appClickOutside (clickOutsideElement)="onClickedOutside($event)" 
+        *ngIf="showBox">
+            <app-popup-form></app-popup-form>
         </div>
     </div>
    

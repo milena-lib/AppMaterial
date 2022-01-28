@@ -20,7 +20,7 @@ export class SignatureComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    debugger;
+    // debugger;
     this.sigPadElement = this.sigPad?.nativeElement;
     this.context = this.sigPadElement?.getContext('2d');
     this.context.strokeStyle = '#3742fa';

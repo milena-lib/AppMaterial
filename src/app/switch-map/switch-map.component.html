@@ -1,0 +1,35 @@
+<button #button>Click Me</button>
+
+<!--Autocomplete-->
+<!-- <div *ngIf="options" class="multi-select-container">
+  
+    <div class="multi-select-selection-area" (click)="openMultiselect()" >
+      <span class="multi-select-selection-text">{{selectionText}}</span>  
+      <mat-icon>keyboard_arrow_down</mat-icon>
+   </div>
+  
+    <div [hidden]="!isOpen">
+    <div class="multi-select-search-block">
+      <mat-checkbox class="multi-select-checkbox" [(ngModel)]="checkAll"></mat-checkbox>
+      <mat-form-field appearance="fill" class="one-select">
+        <input matInput type="text" #inputAutoComplete
+        [matAutocomplete]="auto"
+        [formControl]="selectControl" />
+      </mat-form-field>
+      <mat-icon>cancel</mat-icon>
+      
+    </div>
+    
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let data of filteredData | async" [value]="data.Value">
+        <div (click)="optionClicked($event, data)">
+          <mat-checkbox [checked]="data.Selected" class="multi-select-checkbox"
+            (change)="toggleSelection(data)" 
+            (click)="$event.stopPropagation()">
+            {{ data.Text }}
+          </mat-checkbox>
+        </div>
+      </mat-option>
+    </mat-autocomplete>
+    </div>
+  </div> -->

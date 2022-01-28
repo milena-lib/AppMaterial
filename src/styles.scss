@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import './themes';
+@import '~@angular/cdk/overlay-prebuilt.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$border: blue;
+
+* {
+  font-family: lato;
+  box-sizing: border-box;
+}
+
+.tooltip {
+  border-bottom: dotted 1px gray;
+  padding-top: 1rem;
+  margin-top: -1rem;
+  padding-bottom: .1rem;
+}

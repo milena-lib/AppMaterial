@@ -51,6 +51,15 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OverlayComponent } from './swap/overlay/overlay.component';
 
 import { ClickOutsideModule } from 'ng-click-outside';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { PopupFormComponent } from './popup-form/popup-form.component';
+
+import { MyLibModule } from 'node_modules/milena-lib';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { TooltipDirective } from './tooltip/tooltip.directive';
+import { CustomDataGridComponent } from './grid/custom-data-grid/custom-data-grid.component';
+import { SwitchMapComponent } from './switch-map/switch-map.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const modules = [
   ReactiveFormsModule,
@@ -100,7 +109,13 @@ const modules = [
     GridComponent,
     SwapComponent,
     DeliveryComponent,
-    OverlayComponent
+    OverlayComponent,
+    ClickOutsideDirective,
+    PopupFormComponent,
+    TooltipComponent,
+    TooltipDirective,
+    CustomDataGridComponent,
+    SwitchMapComponent
   ],
   imports: [
     BrowserModule,
@@ -109,10 +124,14 @@ const modules = [
     // ProductListModule,
     FormsModule,
     ClickOutsideModule,
+    MyLibModule,
+    HttpClientModule,
     modules
   ],
   exports: [
     BrowserAnimationsModule,
+    SwitchMapComponent,
+    
     modules
   ],
   providers: [{provide: OverlayContainer}],

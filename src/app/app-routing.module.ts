@@ -7,6 +7,7 @@ import { GridComponent } from './grid/grid.component';
 import { HomeComponent } from './home/home.component';
 import { SignatureComponent } from './signature/signature.component';
 import { SwapComponent } from './swap/swap/swap.component';
+import { SwitchMapComponent } from './switch-map/switch-map.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'grid', component: GridComponent, canActivate: [CardsGuard]},
   {path: 'signature', component: SignatureComponent, canActivate: [CardsGuard]},
   {path: 'swap', component: SwapComponent},
+  {path: 'switch-map', component: SwitchMapComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
