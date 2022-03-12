@@ -6,7 +6,7 @@ import { IGridEvents } from '../interfaces/i-grid-events';
   providedIn: 'root'
 })
 export class HelperService {
-
+  public isMobile: boolean = window.innerWidth <= 360 ? true : false;
   constructor() { }
 
   readonly gridEvent$ = new Subject<IGridEvents>();

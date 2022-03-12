@@ -7,5 +7,6 @@ export class CardsGuard implements CanActivate{
         // получаем id
         //console.log(route.params['id']);
         return confirm('Вы уверены, что хотите перейти?');
+        //return false; 
     }
 }
