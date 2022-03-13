@@ -1,0 +1,20 @@
+<div class="row" [formGroup]="productForm">
+    {{product?.name}}
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Remark</mat-label>
+        <input type="email" matInput formControlName="remarkFormControl">
+        <mat-error *ngIf="remarkFormControl()">
+          Remark is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Notes</mat-label>
+        <input type="email" matInput formControlName="noteFormControl">
+        <mat-error *ngIf="noteFormControl()">
+          Note is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+</div>
+

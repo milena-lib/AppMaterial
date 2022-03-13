@@ -1,0 +1,8 @@
+<div class="products">
+    <div class="title">Products</div>
+    <div class="row" *ngFor="let item of products">
+        <app-form-item [product]="item"></app-form-item>
+    </div>
+
+    <button mat-button color="primary" (click)="submit()">Primary</button>
+</div>

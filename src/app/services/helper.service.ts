@@ -10,6 +10,7 @@ export class HelperService {
   constructor() { }
 
   readonly gridEvent$ = new Subject<IGridEvents>();
+  readonly isSubmitForm$ = new Subject<boolean>();
 
   setGridEvent(row, column, componentName) {
     let gridEvent: IGridEvents;
@@ -19,4 +20,13 @@ export class HelperService {
     
     this.gridEvent$.next(gridEvent);
   }
+
+  setSubmitForm() {
+    this.isSubmitForm$.next(true);
+  }
+
+  getSubmitForm() {
+    return this.isSubmitForm$;
+  }
+  
 }

@@ -10,9 +10,12 @@ export class ProductService {
     let products:Product[];
 
     products=[
-        new Product(1,'Memory Card',500),
-        new Product(2,'Pen Drive',750),
-        new Product(3,'Power Bank',100)
+        new Product(1,'iPhone',500),
+        new Product(2,'Samsung',750),
+        new Product(3,'Nokia',300),
+        new Product(4,'Motorola',150),
+        new Product(5,'Xiomi',120),
+        new Product(6,'Meizo',100)
     ]
 
     return products;       

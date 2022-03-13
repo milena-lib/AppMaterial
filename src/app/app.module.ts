@@ -60,6 +60,8 @@ import { TooltipDirective } from './tooltip/tooltip.directive';
 import { CustomDataGridComponent } from './grid/custom-data-grid/custom-data-grid.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsValidationComponent } from './reactive-forms-validation/reactive-forms-validation.component';
+import { FormItemComponent } from './reactive-forms-validation/form-item/form-item.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -115,7 +117,9 @@ const modules = [
     TooltipComponent,
     TooltipDirective,
     CustomDataGridComponent,
-    SwitchMapComponent
+    SwitchMapComponent,
+    ReactiveFormsValidationComponent,
+    FormItemComponent
   ],
   imports: [
     BrowserModule,
