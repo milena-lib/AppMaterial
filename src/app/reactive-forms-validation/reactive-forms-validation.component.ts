@@ -9,7 +9,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./reactive-forms-validation.component.scss']
 })
 export class ReactiveFormsValidationComponent implements OnInit {
-  isSubmit: boolean = false;
+  // isSubmit: boolean = false;
 
   products: Product[]=[
       { productID: 1, name: 'iPhone', price: 500 },
@@ -27,7 +27,7 @@ export class ReactiveFormsValidationComponent implements OnInit {
   }
 
   submit() {
-    this.isSubmit = true;
+    // this.isSubmit = true;
     this.helper.setSubmitForm();
     console.log("submit");
   }

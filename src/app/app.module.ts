@@ -62,6 +62,7 @@ import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsValidationComponent } from './reactive-forms-validation/reactive-forms-validation.component';
 import { FormItemComponent } from './reactive-forms-validation/form-item/form-item.component';
+import { MultiselectComponent } from './multiselect/multiselect.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -119,7 +120,8 @@ const modules = [
     CustomDataGridComponent,
     SwitchMapComponent,
     ReactiveFormsValidationComponent,
-    FormItemComponent
+    FormItemComponent,
+    MultiselectComponent
   ],
   imports: [
     BrowserModule,

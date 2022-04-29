@@ -9,6 +9,7 @@ import { SignatureComponent } from './signature/signature.component';
 import { SwapComponent } from './swap/swap/swap.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ReactiveFormsValidationComponent } from './reactive-forms-validation/reactive-forms-validation.component';
+import { MultiselectComponent } from './multiselect/multiselect.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'swap', component: SwapComponent},
   {path: 'switch-map', component: SwitchMapComponent},
   {path: 'form-valid', component: ReactiveFormsValidationComponent},
+  {path: 'multiselect', component: MultiselectComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
