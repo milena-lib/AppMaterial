@@ -50,7 +50,7 @@ export class MultiselectComponent implements OnInit {
     },
   ];
   
-  selectedCities = [];
+  selectedValues = [];
 
   constructor() { }
 
@@ -66,7 +66,7 @@ export class MultiselectComponent implements OnInit {
     return group.cities.filter(t => t.checked).length > 0 && !group.completed;
   }
 
-  setAll(completed: boolean, group: AreaGroup) {
+  setAll(completed: boolean, group: AreaGroup, index: number) {
     group.completed = completed;
     if (group.cities == null) {
       return;
@@ -74,15 +74,38 @@ export class MultiselectComponent implements OnInit {
     
     group.cities.forEach(t => {
       t.checked = completed;
-      
-      if(completed) {
-        this.selectedCities.push(t.value);
-      }else{
-        this.selectedCities.shift();
-      }
-      
     });
-    this.areaControl.setValue(this.selectedCities);
+    
+    const selecteds = this.updateSelected();
+    this.selectedValues = selecteds.reduce(function(a, b){ return a.concat(b); }, []);
+
+    // console.log("selectedAllValues: ", this.selectedValues);
+    
+    this.areaControl.setValue(this.selectedValues);
+  }
+
+  setSelected(sel: boolean, group: AreaGroup, index: number) {
+    group.cities[index].checked = sel;
+
+    group.completed = sel ? (group.cities.filter(x => x.checked)?.length === group.cities.length ? true : false) : false;
+    
+    const selecteds = this.updateSelected();
+    this.selectedValues = selecteds.reduce(function(a, b){ return a.concat(b); }, []);
+
+    // console.log("selectedValues: ", this.selectedValues);
+  }
+
+  updateSelected(): any[] {
+    let temp=[];
+    let gr;
+    this.areaGroups.forEach(itemGroup => {
+      if(itemGroup.cities.filter(x => x.checked)?.length) {
+        gr = itemGroup.cities.filter(x => x.checked).map(y => y.value);   
+        temp.push(gr); 
+      }
+    });
+
+    return temp;
   }
 
   getSelections() {
