@@ -66,7 +66,7 @@ export class MultiselectComponent implements OnInit {
     return group.cities.filter(t => t.checked).length > 0 && !group.completed;
   }
 
-  setAll(completed: boolean, group: AreaGroup, index: number) {
+  setAll(completed: boolean, group: AreaGroup) {
     group.completed = completed;
     if (group.cities == null) {
       return;
