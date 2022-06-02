@@ -54,7 +54,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { PopupFormComponent } from './popup-form/popup-form.component';
 
-import { MyLibModule } from 'node_modules/milena-lib';
+// import { MyLibModule } from 'node_modules/milena-lib';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip/tooltip.directive';
 import { CustomDataGridComponent } from './grid/custom-data-grid/custom-data-grid.component';
@@ -63,6 +63,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsValidationComponent } from './reactive-forms-validation/reactive-forms-validation.component';
 import { FormItemComponent } from './reactive-forms-validation/form-item/form-item.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import { DragAndDropDirective } from './drag-and-drop/drag-and-drop.directive';
+import { DragAndDrop1Component } from './drag-and-drop1/drag-and-drop1.component';
+import { DragAndDrop2Component } from './drag-and-drop2/drag-and-drop2.component';
+import { ArraySortPipe, ArrayFilterPipe  } from './drag-and-drop2/array.pipe';
+import { DragDropDualListComponent } from './drag-and-drop2/drag-drop-dual-list/drag-drop-dual-list.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -121,7 +127,13 @@ const modules = [
     SwitchMapComponent,
     ReactiveFormsValidationComponent,
     FormItemComponent,
-    MultiselectComponent
+    MultiselectComponent,
+    DragAndDropComponent,
+    DragAndDropDirective,
+    DragAndDrop1Component,
+    DragAndDrop2Component,
+    ArraySortPipe, 
+    ArrayFilterPipe, DragDropDualListComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +142,7 @@ const modules = [
     // ProductListModule,
     FormsModule,
     ClickOutsideModule,
-    MyLibModule,
+    // MyLibModule,
     HttpClientModule,
     modules
   ],

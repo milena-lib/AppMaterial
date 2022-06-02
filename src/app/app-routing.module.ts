@@ -10,6 +10,9 @@ import { SwapComponent } from './swap/swap/swap.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ReactiveFormsValidationComponent } from './reactive-forms-validation/reactive-forms-validation.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import { DragAndDrop1Component } from './drag-and-drop1/drag-and-drop1.component';
+import { DragDropDualListComponent } from './drag-and-drop2/drag-drop-dual-list/drag-drop-dual-list.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -21,6 +24,9 @@ const routes: Routes = [
   {path: 'switch-map', component: SwitchMapComponent},
   {path: 'form-valid', component: ReactiveFormsValidationComponent},
   {path: 'multiselect', component: MultiselectComponent},
+  {path: 'drag-and-drop', component: DragAndDropComponent},
+  {path: 'drag-and-drop1', component: DragAndDrop1Component},
+  {path: 'drag-drop-dual-list', component: DragDropDualListComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 

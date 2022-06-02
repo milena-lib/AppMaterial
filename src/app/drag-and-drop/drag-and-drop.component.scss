@@ -1,0 +1,13 @@
+.box {
+    border: 3px solid rgb(230, 197, 197);
+    background-color: rgb(110, 149, 175);
+    border-radius: 0.5em;
+    padding: 10px;
+    cursor: move;
+    color: white;
+  }
+  
+  .box.over {
+    border: 3px dotted rgb(245, 41, 41);
+  }
+  
