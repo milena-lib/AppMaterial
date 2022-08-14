@@ -10,6 +10,16 @@ export class MultiselectComponent implements OnInit {
   areaControl = new FormControl();
   areaGroups: AreaGroup[] = [
     {
+      name: '',
+      disabled: false,
+      cities: [
+        {value: 'Bat Yam', viewValue: 'בת ים', checked: false},
+        {value: 'Arial', viewValue: 'אריאל', checked: false},
+        {value: 'Givatayim', viewValue: 'גבעתיים', checked: false}
+      ],
+      completed: false
+    },
+    {
       name: 'צפון',
       disabled: false,
       cities: [
@@ -109,8 +119,10 @@ export class MultiselectComponent implements OnInit {
   }
 
   getSelections() {
+    debugger;
     console.log("areaGroups: ", this.areaGroups);
   }
+
 }
 
 interface City {

@@ -81,3 +81,11 @@ mat-checkbox {
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
   background: limegreen !important;
 }
+
+.no-group-options mat-option {
+  padding: 0;
+}
+
+.no-group-options mat-pseudo-checkbox {
+  margin-right: 16px !important;
+}
