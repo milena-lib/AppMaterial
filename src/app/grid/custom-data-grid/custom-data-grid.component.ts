@@ -20,7 +20,7 @@ import { HelperService } from 'src/app/services/helper.service';
     ]),
   ],
 })
-export class CustomDataGridComponent implements OnInit, OnChanges {
+export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
   GridColumnTypeEnum = GridColumnTypeEnum;
   
   _dataGrid: ICustomGridModel;
@@ -29,10 +29,10 @@ export class CustomDataGridComponent implements OnInit, OnChanges {
   }
   @Input() set dataGrid(value: ICustomGridModel) {
       this._dataGrid = value;
-      debugger;
+      // debugger;
   }
 
-  @Input() weigth: string;
+  @Input() dataGridPrev: ICustomGridModel;
 
   columns: IColumn[];
   displayedColumns: Array<string>;
@@ -61,12 +61,17 @@ export class CustomDataGridComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     //const columns = changes['dataSource'].currentValue || [];
-    debugger;
+    // debugger;
   }
 
-  // ngDoCheck() {
-  //   debugger;
-  // }
+  ngDoCheck() {
+    // if(this.dataGridPrev.dataSource[2].weight !== this.dataGrid.dataSource[2].weight) {
+    //   console.log("dataGridPrev:", this.dataGridPrev);
+    //   console.log("dataGrid:", this.dataGrid);
+    //   debugger;
+    // }
+    
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
