@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -20,7 +20,7 @@ import { HelperService } from 'src/app/services/helper.service';
     ]),
   ],
 })
-export class CustomDataGridComponent implements OnInit {
+export class CustomDataGridComponent implements OnInit, OnChanges {
   GridColumnTypeEnum = GridColumnTypeEnum;
   
   @Input() dataGrid: ICustomGridModel;
@@ -50,6 +50,15 @@ export class CustomDataGridComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    //const columns = changes['dataSource'].currentValue || [];
+    debugger;
+  }
+
+  // ngDoCheck() {
+  //   debugger;
+  // }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -68,6 +77,10 @@ export class CustomDataGridComponent implements OnInit {
   onClickButton() {
     const ds = this.dataSource.sortData(this.dataSource.filteredData,this.dataSource.sort);
     console.log("sortable data: ", ds);
+  }
+
+  trackByMethod(index: number, item: any) {
+    console.log("item: ", item);
   }
 
 }

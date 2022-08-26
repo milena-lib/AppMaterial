@@ -1,5 +1,6 @@
 import { DataSource } from '@angular/cdk/collections';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 import { IGridEvents } from '../interfaces/i-grid-events';
 import { HelperService } from '../services/helper.service';
 import { GridColumnTypeEnum } from './enums';
@@ -54,8 +55,12 @@ export class GridComponent implements OnInit {
       ],
       columns: this.displayedColumns
     };
+ 
+  tempGrid: ICustomGridModel = {
+    dataSource:[]=this.dataGrid.dataSource,
+    columns: this.displayedColumns
+  }
 
-  
   constructor(private helper: HelperService) {     
   }
 
@@ -64,8 +69,23 @@ export class GridComponent implements OnInit {
       if(event && event.component === "qwerty"){
         console.log("event: ", event);
       }
-    })
+    });
+
+    interval(60000).subscribe((val) => {
+      this.dataGrid.dataSource[2].weight = (Number(this.dataGrid.dataSource[2].weight) + 0.05).toString();
+      // console.log(this.dataGrid.dataSource[2].weight);
+      debugger;
+      
+      for(let i=0; i<this.dataGrid.dataSource.length; i++) {
+        if(this.dataGrid.dataSource[i].weight !== this.tempGrid.dataSource[i].weight) {
+          console.log("weight is differense in line " + i);
+        }
+      }
+
+
+    });
   }
+
 }
 
 // export interface PeriodicElement {
