@@ -23,7 +23,16 @@ import { HelperService } from 'src/app/services/helper.service';
 export class CustomDataGridComponent implements OnInit, OnChanges {
   GridColumnTypeEnum = GridColumnTypeEnum;
   
-  @Input() dataGrid: ICustomGridModel;
+  _dataGrid: ICustomGridModel;
+  get dataGrid(): ICustomGridModel {
+    return this._dataGrid;
+  }
+  @Input() set dataGrid(value: ICustomGridModel) {
+      this._dataGrid = value;
+      debugger;
+  }
+
+  @Input() weigth: string;
 
   columns: IColumn[];
   displayedColumns: Array<string>;
