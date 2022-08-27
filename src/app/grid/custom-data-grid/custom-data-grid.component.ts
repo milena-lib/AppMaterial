@@ -32,7 +32,7 @@ export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
       // debugger;
   }
 
-  @Input() dataGridPrev: ICustomGridModel;
+  // @Input() dataGridPrev: ICustomGridModel;
 
   columns: IColumn[];
   displayedColumns: Array<string>;
@@ -42,6 +42,8 @@ export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
   @ViewChild(MatSort) sort: MatSort;
 
   expandedElement: ICustomGridModel | null;
+
+  dataSourcePrev: Array<any>;
 
   constructor(private helper: HelperService) { }
 
@@ -60,12 +62,21 @@ export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    if (changes["dataGrid"].previousValue){
+      console.log("ngOnChanges :prev", changes["dataGrid"].previousValue);
+      console.log("ngOnChanges :current", changes["dataGrid"].currentValue);
+      console.log("========================");
+      // debugger;
+      this.dataSourcePrev = changes["dataGrid"].previousValue.dataSource.slice();
+      // console.log("ngOnChanges:prev:2", changes["dataGrid"].previousValue.dataSource[0]["weight"])
+      // console.log("ngOnChanges:prev:3", this.dataSourcePrev[0]["weight"])
+    }
     //const columns = changes['dataSource'].currentValue || [];
     // debugger;
   }
 
   ngDoCheck() {
-    // if(this.dataGridPrev.dataSource[2].weight !== this.dataGrid.dataSource[2].weight) {
+    // if(this.dataGridPrev.dataSource[0].weight !== this.dataGrid.dataSource[2].weight) {
     //   console.log("dataGridPrev:", this.dataGridPrev);
     //   console.log("dataGrid:", this.dataGrid);
     //   debugger;
@@ -97,6 +108,25 @@ export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
     console.log("item: ", item);
   }
 
+  isCellChanged(row, column) : boolean{
+    let res =  false;
+    if(this.dataSourcePrev){
+      const rowIndex = this.dataSource.filteredData.indexOf(row);
+      const rowPrev = this.dataSourcePrev[rowIndex];
+      const valuePrev = rowPrev[column.dataField]  ;
+      if (column.dataField == "weight" && rowIndex == 0){
+
+        // console.log("isCellChanged: valueCurrent ", row[column.dataField]);
+        // console.log("isCellChanged: valuePrev ", valuePrev);
+        // // console.log("isCellChanged: rowPrev ", rowPrev);
+          // console.log("========================")
+
+      }
+      res = row[column.dataField] != valuePrev;
+    }
+    return res;
+
+  }
 }
 
 // export interface PeriodicElement {

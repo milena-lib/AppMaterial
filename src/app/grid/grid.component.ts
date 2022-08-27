@@ -87,21 +87,23 @@ export class GridComponent implements OnInit {
         console.log("event: ", event);
       }
     });
-
-    interval(3000).subscribe((val) => {
-      this.dataGrid.dataSource[2].weight = this.dataGrid.dataSource[2].weight.replace("<span class='fired'>", "").replace("</span>","");
-      this.dataGrid.dataSource[2].weight = (Number(this.dataGrid.dataSource[2].weight) + 1).toString();
+    
+    interval(30000).subscribe((val) => {
+      // this.dataGrid.dataSource[2].weight = this.dataGrid.dataSource[2].weight.replace("<span class='fired'>", "").replace("</span>","");
+      let data = this.dataGrid.dataSource.slice();    
+      data[0].weight = (Number(this.dataGrid.dataSource[0].weight) + 1).toString();
       
-      // console.log("dataGridPrev weight:", this.dataGridPrev.dataSource[2].weight);
-      // console.log("dataGrid weight:", this.dataGrid.dataSource[2].weight);
-      for(let i=0; i<this.dataGrid.dataSource.length; i++) {
-        if(this.dataGrid.dataSource[i].weight !== this.dataGridPrev.dataSource[i].weight) {
-          this.dataGrid.dataSource[i].weight = "<span class='fired'>" + this.dataGrid.dataSource[i].weight + "</span>";
-        }
+      // console.log("dataGridPrev weight:", this.dataGridPrev.dataSource[0].weight);
+      // console.log("dataGrid weight:", this.dataGrid.dataSource[0].weight);
+      // for(let i=0; i<this.dataGrid.dataSource.length; i++) {
+      //   // if(this.dataGrid.dataSource[i].weight !== this.dataGridPrev.dataSource[i].weight) {
+      //   //   this.dataGrid.dataSource[i].weight = `<span class="fired">${this.dataGrid.dataSource[i].weight}</span>`;
+      //   // }
 
-        this.dataGridPrev.dataSource[i].weight = this.dataGrid.dataSource[i].weight.replace("<span class='fired'>", "").replace("</span>","");;
-      }
+      //   this.dataGridPrev.dataSource[i].weight = this.dataGrid.dataSource[i].weight;
+      // }
 
+      this.dataGrid = {dataSource: data, columns: this.displayedColumns};
     });
   }
 

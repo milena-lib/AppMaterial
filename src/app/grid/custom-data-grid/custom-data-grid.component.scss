@@ -82,3 +82,15 @@ tr.example-element-row:not(.example-expanded-row):active {
 td, th {
     width: 25%;
 }
+
+.highlight {
+    animation: blinker 1s linear forwards;// infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        background-color: yellow;
+    }
+}
+  
+  
