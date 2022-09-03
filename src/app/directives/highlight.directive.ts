@@ -14,9 +14,7 @@ export class HighlightDirective implements OnChanges {
       console.log("hostElement", this.hostElement);
       this.renderer.addClass(this.hostElement.nativeElement, 'highlight');
     }
-    // interval(3500).subscribe((val) => {
-    //   this.renderer.removeClass(this.hostElement.nativeElement, 'highlight');
-    //  });
+   
     setTimeout(() => {
       this.renderer.removeClass(this.hostElement.nativeElement, 'highlight');
     }, 3000); 
