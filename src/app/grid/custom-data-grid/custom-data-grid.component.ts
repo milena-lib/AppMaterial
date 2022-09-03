@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -20,7 +20,7 @@ import { HelperService } from 'src/app/services/helper.service';
     ]),
   ],
 })
-export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
+export class CustomDataGridComponent implements OnInit {
   GridColumnTypeEnum = GridColumnTypeEnum;
   
   _dataGrid: ICustomGridModel;
@@ -61,27 +61,8 @@ export class CustomDataGridComponent implements OnInit, OnChanges, DoCheck {
     this.dataSource.sort = this.sort;
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes["dataGrid"].previousValue){
-      console.log("ngOnChanges :prev", changes["dataGrid"].previousValue);
-      console.log("ngOnChanges :current", changes["dataGrid"].currentValue);
-      console.log("========================");
-      // debugger;
-      this.dataSourcePrev = changes["dataGrid"].previousValue.dataSource.slice();
-      // console.log("ngOnChanges:prev:2", changes["dataGrid"].previousValue.dataSource[0]["weight"])
-      // console.log("ngOnChanges:prev:3", this.dataSourcePrev[0]["weight"])
-    }
-    //const columns = changes['dataSource'].currentValue || [];
-    // debugger;
-  }
-
-  ngDoCheck() {
-    // if(this.dataGridPrev.dataSource[0].weight !== this.dataGrid.dataSource[2].weight) {
-    //   console.log("dataGridPrev:", this.dataGridPrev);
-    //   console.log("dataGrid:", this.dataGrid);
-    //   debugger;
-    // }
-    
+  saveChangedElement() {
+    debugger;
   }
 
   applyFilter(event: Event) {
