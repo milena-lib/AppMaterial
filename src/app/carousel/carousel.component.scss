@@ -1,18 +1,31 @@
-body {
-    padding: 10px;
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .big-image {
+    background-color: #eee;
+  }
+
+  .big-image,
+  .big-image img {
+    width: 1156px;
+    height: 502px;
   }
   
   .carousel {
     position: relative;
-    width: 398px;
+    width: 1157px;
     padding: 10px 40px;
     border: 1px solid #CCC;
-    border-radius: 15px;
     background: #eee;
+    background: rgba(0,0,0,0.8);
+    margin-top: 10px;
   }
   
   .carousel img {
-    width: 130px;
+    width: 260px;
     height: 130px;
     /* по умолчанию inline, в ряде браузеров это даст лишнее пространство вокруг элементов */
   
@@ -25,11 +38,27 @@ body {
     padding: 0;
     background: #ddd;
     border-radius: 15px;
+    width: 30px;
+    height: 30px;
     border: 1px solid gray;
     font-size: 24px;
     line-height: 24px;
     color: #444;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow div {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+* {
+    font-family: lato;
+    box-sizing: border-box;
   }
   
   .arrow:focus {
@@ -40,17 +69,27 @@ body {
     background: #ccc;
     cursor: pointer;
   }
+
+  .arrow.prev div {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
   
   .prev {
     left: 7px;
   }
   
+  .arrow.next div {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
   .next {
     right: 7px;
   }
   
   .gallery {
-    width: 390px !important;
+    width: 1075px !important;
     overflow: hidden;
   }
   
@@ -70,6 +109,7 @@ body {
   .gallery li {
     display: inline-block;
     position: relative;
+    padding: 0 5px;
   }
 
   li span {
@@ -78,3 +118,8 @@ body {
     top:0;
 
   }
+
+  img.selected {
+    border: 2px solid #fff;
+  }
+
