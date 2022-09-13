@@ -7,20 +7,21 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
   position: number = 0;
-  width: number = 130;
+  width: number = 271;
   count: number = 3;
+  selectedImage: string = '../../assets/images/1.jpg';
 
   listElems = [
-    {src: 'https://js.cx/carousel/1.png'},
-    {src: 'https://js.cx/carousel/2.png'},
-    {src: 'https://js.cx/carousel/3.png'},
-    {src: 'https://js.cx/carousel/4.png'},
-    {src: 'https://js.cx/carousel/5.png'},
-    {src: 'https://js.cx/carousel/6.png'},
-    {src: 'https://js.cx/carousel/7.png'},
-    {src: 'https://js.cx/carousel/8.png'},
-    {src: 'https://js.cx/carousel/9.png'},
-    {src: 'https://js.cx/carousel/10.png'}
+    {src: '../../assets/images/1.jpg'},
+    {src: '../../assets/images/2.jpg'},
+    {src: '../../assets/images/3.jpg'},
+    {src: '../../assets/images/4.jpg'},
+    {src: '../../assets/images/5.jpg'},
+    {src: '../../assets/images/6.jpg'},
+    {src: '../../assets/images/7.jpg'},
+    {src: '../../assets/images/8.jpg'},
+    {src: '../../assets/images/9.jpg'},
+    {src: '../../assets/images/10.jpg'}
   ]
 
   @ViewChild('container') containerCtrl: ElementRef;
