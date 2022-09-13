@@ -1,0 +1,12 @@
+<div class="carousel">
+    <button class="arrow prev" (click)="goPrev()">⇦</button>
+    <div class="gallery">
+      <ul #container class="images">
+        <li *ngFor="let el of listElems; let i=index">
+            <img src="{{el.src}}">
+            <span>{{i}}</span>
+        </li>
+      </ul>
+    </div>
+    <button class="arrow next" (click)="goNext()">⇨</button>
+  </div>

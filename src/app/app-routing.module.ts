@@ -13,6 +13,7 @@ import { MultiselectComponent } from './multiselect/multiselect.component';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import { DragAndDrop1Component } from './drag-and-drop1/drag-and-drop1.component';
 import { DragDropDualListComponent } from './drag-and-drop2/drag-drop-dual-list/drag-drop-dual-list.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'drag-and-drop', component: DragAndDropComponent},
   {path: 'drag-and-drop1', component: DragAndDrop1Component},
   {path: 'drag-drop-dual-list', component: DragDropDualListComponent},
+  {path: 'carousel', component: CarouselComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
