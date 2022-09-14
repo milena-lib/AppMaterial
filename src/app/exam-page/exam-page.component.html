@@ -1,0 +1,10 @@
+<div class="main-layout">
+    <div>
+        <app-qa-list [questions]="allQuestions" (selectQuestionRequested)="setCurrentQuestion($event)"></app-qa-list>
+    </div>
+    <div>
+        <div *ngIf="selectedQuestion">
+            <h3>{{selectedQuestion.qustionText}}</h3>
+        </div>
+    </div>
+</div>
