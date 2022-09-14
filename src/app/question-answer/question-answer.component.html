@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>מבחן אמריקאי</h2>
+    <div class="quest-answ-block">
+        <div class="questions">
+            <div class="quest" *ngFor="let q of questions; let i=index" 
+                (click)="setQuestion(q, i)" 
+                [class.selected]="selectedQuestion === q"
+                [class.success]="q.userAnswer && q.userAnswer === q.correctAnswer"
+                [class.error]="q.userAnswer && q.userAnswer !== q.correctAnswer">
+                {{q.text}}
+            </div>
+        </div>
+        <div class="answers">
+            <app-answers [question]="selectedQuestion" (selectedAnswer)="saveAnswer($event)"></app-answers>
+        </div>
+    </div>
+    <h2 [ngClass]="grade < 60 ? 'red' : 'green'">ציון: {{grade}}%</h2>
+</div>

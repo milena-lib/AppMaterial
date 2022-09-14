@@ -1,0 +1,15 @@
+<div class="container" *ngIf="question">
+    <div class="title"><h3>{{question.text}}</h3></div>
+    
+    <div *ngFor="let option of question.options">
+        <input type="radio" name="answ" #answ 
+            (change)="onChangeOption(option.text);" 
+            [checked]="question.userAnswer === option.text"
+            [disabled]="isDisabled">
+        <label for="answer">
+            <span *ngIf="answ.checked && question.userAnswer === question.correctAnswer" class="success">V</span>
+            <span *ngIf="answ.checked && question.userAnswer && question.userAnswer !== question.correctAnswer" class="error">X</span>
+            <span [class.success-answer]="isDisabled && question.userAnswer && question.userAnswer !== question.correctAnswer && option.text === question.correctAnswer">{{option.text}}</span>
+        </label>
+    </div>
+</div>
