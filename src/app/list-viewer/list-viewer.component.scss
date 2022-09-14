@@ -1,0 +1,17 @@
+.list {
+    display: flex;
+
+    .item {
+        padding: 20px;
+        text-align: center;
+        border: 1px solid black;
+        margin: 10px;
+        border-radius: 9px;
+        cursor: pointer;
+
+        &.selected {
+            background-color: blueviolet;
+            border: 2px solid black;
+        }
+    }
+}

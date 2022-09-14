@@ -1,0 +1,12 @@
+<div class="main-grid">
+    <div>
+        <img *ngIf="selectedImage" [src]="selectedImage.url" />
+    </div>
+    <div class="images">
+        <div *ngFor="let img of images">
+            <img [src]="img.url" [alt]="img.title" [title]="img.title" (click)="setSelecetdImage(img)"
+                [class.selected]="img.id === selectedImage?.id" />
+        </div>
+
+    </div>
+</div>

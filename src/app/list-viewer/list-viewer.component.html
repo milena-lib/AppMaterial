@@ -1,0 +1,6 @@
+<div class="list">
+    <div *ngFor="let itemResult of list" class="item" [class.selected]="itemResult === selectedItem"
+        (click)="setSelectedItem(itemResult)">
+        {{itemResult}}
+    </div>
+</div>

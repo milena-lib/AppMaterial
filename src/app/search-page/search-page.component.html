@@ -1,0 +1,21 @@
+<div>
+    <app-list-viewer [list]="['Shimon', 'David', 'Naama']"></app-list-viewer>
+
+    <div>
+        <input #txt type="text" (input)="searchWord = txt.value" (blur)="doSearch()">
+        <button [disabled]="!txt.value" (click)="doSearch()">OK</button>
+        <span *ngIf="isBusy">Loading...</span>
+    </div>
+    <div>
+        <app-list-viewer [list]="result" [selectedItem]="selectedItem" (itemSelected)="setSelectedItem($event)">
+        </app-list-viewer>
+        <h2 *ngIf="selectedItem">Selected item : {{selectedItem}}</h2>
+    </div>
+</div>
+
+<!-- 
+    [] - attributes
+    () - events
+    {{}} - inner html
+
+ -->
