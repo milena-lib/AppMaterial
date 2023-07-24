@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -18,7 +18,7 @@ import { HelperService } from 'src/app/services/helper.service';
       state('expanded', style({height: '*'})),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
-  ],
+  ]
 })
 export class CustomDataGridComponent implements OnInit {
   GridColumnTypeEnum = GridColumnTypeEnum;
@@ -32,10 +32,16 @@ export class CustomDataGridComponent implements OnInit {
       // debugger;
   }
 
+  @Input() showExpandbleRow = false;
+
+  @Input() public expandedRowTemplate!: TemplateRef<any>;
+
   // @Input() dataGridPrev: ICustomGridModel;
 
   columns: IColumn[];
   displayedColumns: Array<string>;
+  columnsToDisplayWithExpand: Array<string>; 
+  
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -52,7 +58,7 @@ export class CustomDataGridComponent implements OnInit {
     this.columns = this.dataGrid.columns;    
 
     this.displayedColumns = this.dataGrid.columns.map(item => item.dataField)
-
+    this.columnsToDisplayWithExpand = [...this.displayedColumns, 'expand'];
     // debugger;
   }
 
@@ -76,8 +82,8 @@ export class CustomDataGridComponent implements OnInit {
 
   openLink(row, column) {
     console.log(row[column.dataField]);
-    
-    this.helper.setGridEvent(row, column, "qwerty")
+    debugger;
+    this.helper.setGridEvent(row, column, "qwerty");
   }
 
   onClickButton() {

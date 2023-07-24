@@ -14,12 +14,14 @@ import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import { DragAndDrop1Component } from './drag-and-drop1/drag-and-drop1.component';
 import { DragDropDualListComponent } from './drag-and-drop2/drag-drop-dual-list/drag-drop-dual-list.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'contacts', component: ContactsComponent, canActivate: [CardsGuard]},
   {path: 'cards', component: CardsComponent, canActivate: [CardsGuard]},
   {path: 'grid', component: GridComponent, canActivate: [CardsGuard]},
+  {path: 'expand-grid', component: GridParentComponent},
   {path: 'signature', component: SignatureComponent, canActivate: [CardsGuard]},
   {path: 'swap', component: SwapComponent},
   {path: 'switch-map', component: SwitchMapComponent},

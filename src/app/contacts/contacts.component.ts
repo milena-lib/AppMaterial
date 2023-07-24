@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent {
+export class ContactsComponent implements OnInit{
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
@@ -87,9 +88,31 @@ export class ContactsComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private readonly router: Router) {
+    router.events
+    .subscribe((event: NavigationStart) => {
+      if (event.navigationTrigger === 'popstate') {
+        console.log("contacts: ", event.url);
+        // debugger;
+      }
+    });
+
+  //   router.events
+  //     .subscribe((event: NavigationEnd) => {
+  //       const x=0;
+  //       console.log("contacts: ", event.url);
+  //     });
+  }
+
+  ngOnInit(): void {
+    console.log("previousNavigation: ", this.router['lastSuccessfulNavigation'].previousNavigation);//.getCurrentNavigation().previousNavigation.initialUrl.toString()
+  }
 
   onSubmit() {
     alert('Thanks!');
+  }
+
+  back(){
+    history.back();
   }
 }

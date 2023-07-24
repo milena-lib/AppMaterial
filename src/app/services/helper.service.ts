@@ -13,10 +13,7 @@ export class HelperService {
   readonly isSubmitForm$ = new Subject<boolean>();
 
   setGridEvent(row, column, componentName) {
-    let gridEvent: IGridEvents;
-    gridEvent.row = row;
-    gridEvent.column = column;
-    gridEvent.component = componentName;
+    let gridEvent: IGridEvents = {row: row, column: column, component: componentName};
     
     this.gridEvent$.next(gridEvent);
   }

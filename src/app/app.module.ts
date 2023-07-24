@@ -71,6 +71,9 @@ import { ArraySortPipe, ArrayFilterPipe  } from './drag-and-drop2/array.pipe';
 import { DragDropDualListComponent } from './drag-and-drop2/drag-drop-dual-list/drag-drop-dual-list.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { CarouselComponent } from './carousel/carousel.component';
+import { GridChildComponent } from './grid/grid-child/grid-child.component';
+import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
+import { ChildDetailsComponent } from './grid/child-details/child-details.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -135,7 +138,7 @@ const modules = [
     DragAndDrop1Component,
     DragAndDrop2Component,
     ArraySortPipe, 
-    ArrayFilterPipe, DragDropDualListComponent, HighlightDirective, CarouselComponent
+    ArrayFilterPipe, DragDropDualListComponent, HighlightDirective, CarouselComponent, GridChildComponent, GridParentComponent, ChildDetailsComponent
   ],
   imports: [
     BrowserModule,

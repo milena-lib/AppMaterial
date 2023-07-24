@@ -1,0 +1,11 @@
+<h1>Users:</h1>
+<app-custom-data-grid 
+    [dataGrid]="dataGrid"
+    [showExpandbleRow]="true"
+    [expandedRowTemplate]="expandedRowTemplate" 
+    ></app-custom-data-grid>
+
+<ng-template #expandedRowTemplate let-ester>
+    <app-grid-child [user]="ester"></app-grid-child>
+    
+</ng-template>  

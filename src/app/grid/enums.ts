@@ -3,5 +3,6 @@ export enum GridColumnTypeEnum {
     number,
     date,
     dateTime,
-    link
+    link,
+    icon
 }

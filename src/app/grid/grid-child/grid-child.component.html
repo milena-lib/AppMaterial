@@ -1,0 +1,12 @@
+<h1>Childs of {{user.fname}} {{user.lname}} </h1>
+<div>id: {{user.uid}}</div>
+<app-custom-data-grid 
+    [dataGrid]="dataGrid"
+    [showExpandbleRow]="true"
+    [expandedRowTemplate]="expandedRowTemplate" 
+    ></app-custom-data-grid>
+
+<ng-template #expandedRowTemplate let-item>
+    <app-child-details [child]="item"></app-child-details>
+    
+</ng-template>  
