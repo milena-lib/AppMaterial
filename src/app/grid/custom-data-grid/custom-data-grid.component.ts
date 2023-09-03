@@ -114,6 +114,7 @@ export class CustomDataGridComponent implements OnInit {
     return res;
 
   }
+  
 }
 
 // export interface PeriodicElement {

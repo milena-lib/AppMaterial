@@ -74,6 +74,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { GridChildComponent } from './grid/grid-child/grid-child.component';
 import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 import { ChildDetailsComponent } from './grid/child-details/child-details.component';
+import { SumPipe } from './grid/custom-data-grid/sum.pipe';
 
 const modules = [
   ReactiveFormsModule,
@@ -138,7 +139,14 @@ const modules = [
     DragAndDrop1Component,
     DragAndDrop2Component,
     ArraySortPipe, 
-    ArrayFilterPipe, DragDropDualListComponent, HighlightDirective, CarouselComponent, GridChildComponent, GridParentComponent, ChildDetailsComponent
+    ArrayFilterPipe, 
+    DragDropDualListComponent, 
+    HighlightDirective, 
+    CarouselComponent, 
+    GridChildComponent, 
+    GridParentComponent, 
+    ChildDetailsComponent, 
+    SumPipe 
   ],
   imports: [
     BrowserModule,
@@ -154,7 +162,7 @@ const modules = [
   exports: [
     BrowserAnimationsModule,
     SwitchMapComponent,
-    
+    SumPipe,
     modules
   ],
   providers: [{provide: OverlayContainer}],
