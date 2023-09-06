@@ -14,6 +14,7 @@ export class GridParentComponent implements OnInit {
     { headerText: 'Last Name', dataField: 'lname', dataType: GridColumnTypeEnum.text, cssClass: '' },
     { headerText: 'id', dataField: 'uid', dataType: GridColumnTypeEnum.link, cssClass: '' },
     { headerText: 'phone', dataField: 'phone', dataType: GridColumnTypeEnum.text, cssClass: '' },
+    // { headerText: '', dataField: 'phone', dataType: GridColumnTypeEnum.text, cssClass: '' },
     // { headerText: '', dataField: 'expandedDetail', dataType: GridColumnTypeEnum.icon, cssClass: '' }
   ]
 
@@ -32,9 +33,13 @@ export class GridParentComponent implements OnInit {
       columns: this.displayedColumns
     };
 
+    expandColumns: Array<string> = ['fname','lname','expand','uid','phone'];
+
   constructor() { }
 
   ngOnInit(): void {
+    // const displayedColumns = this.dataGrid.columns.map(item => item.dataField)
+    // this.expandColumns = ['expand', ...displayedColumns ];     
   }
 
 }

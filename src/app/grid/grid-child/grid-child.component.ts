@@ -27,10 +27,13 @@ export class GridChildComponent implements OnInit {
       columns: this.displayedColumns
     };
 
+  expandColumns: Array<string> = [];
+
   constructor() { }
 
   ngOnInit(): void {
-    // debugger;
+    // const displayedColumns = this.dataGrid.columns.map(item => item.dataField)
+    // this.expandColumns = ['expand', ...displayedColumns ];
   }
 
 }

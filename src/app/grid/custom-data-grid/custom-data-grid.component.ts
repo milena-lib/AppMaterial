@@ -40,7 +40,8 @@ export class CustomDataGridComponent implements OnInit {
 
   columns: IColumn[];
   displayedColumns: Array<string>;
-  columnsToDisplayWithExpand: Array<string>; 
+  columnsToDisplayWithExpand: Array<string> = []; 
+  @Input() expandFieldPlace: string;
   
   dataSource: MatTableDataSource<any>;
 
@@ -57,9 +58,16 @@ export class CustomDataGridComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.dataGrid.dataSource);
     this.columns = this.dataGrid.columns;    
 
-    this.displayedColumns = this.dataGrid.columns.map(item => item.dataField)
-    this.columnsToDisplayWithExpand = [...this.displayedColumns, 'expand'];
-    // debugger;
+    this.displayedColumns = this.dataGrid.columns.map(item => item.dataField);    
+
+    this.displayedColumns.forEach((f: string) => {
+      this.columnsToDisplayWithExpand.push(f);
+    })
+    
+    this.columnsToDisplayWithExpand.splice(+this.expandFieldPlace, 0, 'expand');
+
+    // this.columnsToDisplayWithExpand = ['expand', ...this.displayedColumns ];
+    // console.log("columnsToDisplayWithExpand: ", this.columnsToDisplayWithExpand);
   }
 
   ngAfterViewInit() {
