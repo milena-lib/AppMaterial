@@ -75,6 +75,7 @@ import { GridChildComponent } from './grid/grid-child/grid-child.component';
 import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 import { ChildDetailsComponent } from './grid/child-details/child-details.component';
 import { SumPipe } from './grid/custom-data-grid/sum.pipe';
+import { ExpanderComponent } from './expander/expander.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -146,7 +147,8 @@ const modules = [
     GridChildComponent, 
     GridParentComponent, 
     ChildDetailsComponent, 
-    SumPipe 
+    SumPipe, 
+    ExpanderComponent 
   ],
   imports: [
     BrowserModule,

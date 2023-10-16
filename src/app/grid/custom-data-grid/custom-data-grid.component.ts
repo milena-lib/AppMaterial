@@ -62,7 +62,9 @@ export class CustomDataGridComponent implements OnInit {
 
     this.displayedColumns.forEach((f: string) => {
       this.columnsToDisplayWithExpand.push(f);
-    })
+    });
+
+    // console.log("displayedColumns: ", this.displayedColumns);
     
     this.columnsToDisplayWithExpand.splice(+this.expandFieldPlace, 0, 'expand');
 

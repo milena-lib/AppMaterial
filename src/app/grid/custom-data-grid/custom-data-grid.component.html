@@ -14,10 +14,10 @@
                 <span *ngIf="column.dataType === GridColumnTypeEnum.text"> {{row[column.dataField]}}</span> 
             </td>
             
-            <td mat-footer-cell *matFooterCellDef>
-                <span *ngIf="column.dataField === 'symbol'"><b>Total</b></span>
-                <span *ngIf="column.dataField === 'weight'"><b>{{ dataGrid.dataSource | sum:'weight' }}</b></span>
-                <span *ngIf="column.dataField === 'position'"><b>{{ dataGrid.dataSource | sum:'position' }}</b></span>
+            <td [attr.colspan]="showExpandbleRow && column.dataField === 'fname' ? '2' : '1'" mat-footer-cell *matFooterCellDef>
+                <span *ngIf="column.dataField === 'lname'"><b>Total</b></span>
+                <span *ngIf="column.dataField === 'test1'"><b>{{ dataGrid.dataSource | sum:'test1' }}</b></span>
+                <span *ngIf="column.dataField === 'test2'"><b>{{ dataGrid.dataSource | sum:'test2' }}</b></span>
             </td>
         </ng-container>
 

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent implements OnInit{
+export class ContactsComponent implements OnInit, OnDestroy{
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
@@ -88,14 +89,23 @@ export class ContactsComponent implements OnInit{
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
+  subscriptions: Subscription[] = [];
+
   constructor(private fb: FormBuilder, private readonly router: Router) {
-    router.events
+    // this.subscriptions.push(
+      router.events
     .subscribe((event: NavigationStart) => {
-      if (event.navigationTrigger === 'popstate') {
-        console.log("contacts: ", event.url);
-        // debugger;
-      }
-    });
+  //     if (event.navigationTrigger === 'popstate') {
+  //       console.log("contacts: ", event.url);
+  //       // debugger;
+  //     }else if(event.navigationTrigger === 'imperative') {
+
+  //     }
+        if (event.navigationTrigger){
+          console.log("navigationTrigger: ", event.navigationTrigger);
+        }        
+    })
+// );
 
   //   router.events
   //     .subscribe((event: NavigationEnd) => {
@@ -114,5 +124,11 @@ export class ContactsComponent implements OnInit{
 
   back(){
     history.back();
+  }
+
+  ngOnDestroy(){
+    this.subscriptions.forEach((sub: any) => {
+      sub.unsubscribe();
+    });
   }
 }

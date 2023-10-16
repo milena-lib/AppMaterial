@@ -1,0 +1,37 @@
+<div class="container">
+    <mat-accordion><!-- [multi]="true"-->
+        <mat-expansion-panel [expanded]="shouldOpenPanel1"><!--hideToggle [disabled]="true"-->
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Title 1
+                </mat-panel-title>
+                <mat-panel-description>
+                    Description
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <p>Source</p>
+            </div>
+            <mat-action-row>
+                <button>Click</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel><!--hideToggle [disabled]="true"-->
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Title 2
+                </mat-panel-title>
+                <mat-panel-description>
+                    Description
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <app-grid></app-grid>
+            </div>
+            <mat-action-row>
+                <button>Click</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
