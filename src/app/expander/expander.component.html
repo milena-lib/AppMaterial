@@ -1,12 +1,15 @@
 <div class="container">
-    <mat-accordion><!-- [multi]="true"-->
+    <mat-accordion [multi]="true"><!-- [multi]="true"-->
         <mat-expansion-panel [expanded]="shouldOpenPanel1"><!--hideToggle [disabled]="true"-->
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Title 1
                 </mat-panel-title>
                 <mat-panel-description>
-                    Description
+                    Description 1
+                </mat-panel-description>
+                <mat-panel-description>
+                    Description 2
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <div>
@@ -27,7 +30,17 @@
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <div>
-                <app-grid></app-grid>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-description>
+                            Child panel
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div>
+                        <app-grid></app-grid>
+                    </div>
+                </mat-expansion-panel>
+                safcafasf
             </div>
             <mat-action-row>
                 <button>Click</button>
