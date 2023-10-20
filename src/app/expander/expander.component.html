@@ -1,6 +1,6 @@
 <div class="container">
-    <mat-accordion [multi]="true"><!-- [multi]="true"-->
-        <mat-expansion-panel [expanded]="shouldOpenPanel1"><!--hideToggle [disabled]="true"-->
+    <mat-accordion [multi]="true">
+        <mat-expansion-panel class="expansion-panel" [expanded]="shouldOpenPanel1"><!--hideToggle [disabled]="true"-->
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Title 1
@@ -12,15 +12,26 @@
                     Description 2
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <div>
-                <p>Source</p>
-            </div>
-            <mat-action-row>
-                <button>Click</button>
+            
+            <mat-expansion-panel [expanded]="shouldOpenChildPanel1" (opened)="openGroup('devices')" (closed)="closedGroup('devices')">
+                <mat-expansion-panel-header class="child-header">
+                    <!-- <mat-panel-description>
+                        dssdvs
+                    </mat-panel-description> -->
+                </mat-expansion-panel-header>
+                <div class="child-body">
+                    <div class="child-title">מכשירים</div>
+                    <div>sdgsgsd</div>
+                </div>
+            </mat-expansion-panel>
+            
+            <mat-action-row *ngIf="!shouldOpenChildPanel1">
+                <div>מכשירים</div>
+                <div>Total</div>
             </mat-action-row>
         </mat-expansion-panel>
 
-        <mat-expansion-panel><!--hideToggle [disabled]="true"-->
+        <mat-expansion-panel  class="expansion-panel"><!--hideToggle [disabled]="true"-->
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Title 2
@@ -33,7 +44,7 @@
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         <mat-panel-description>
-                            Child panel
+                            Child panel 2
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <div>
