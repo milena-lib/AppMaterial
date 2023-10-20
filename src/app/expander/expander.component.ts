@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  animate,
+  animateChild,
+  group,
+  state,
+  style,
+  transition,
+  trigger,
+  query,
+  AnimationTriggerMetadata,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-expander',

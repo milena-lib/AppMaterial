@@ -26,7 +26,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -76,6 +76,7 @@ import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 import { ChildDetailsComponent } from './grid/child-details/child-details.component';
 import { SumPipe } from './grid/custom-data-grid/sum.pipe';
 import { ExpanderComponent } from './expander/expander.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 const modules = [
   ReactiveFormsModule,
@@ -115,6 +116,15 @@ const modules = [
   DragDropModule,
 ];
 
+// const EXPANSION_PANEL_ANIMATION_TIMING = '10000ms cubic-bezier(0.4,0.0,0.2,1)';
+// MatExpansionPanel['decorators'][0].args[0].animations = [
+//   trigger('bodyExpansion', [
+//     state('collapsed, void', style({ height: '0px', visibility: 'hidden' })),
+//     state('expanded', style({ height: '*', visibility: 'visible' })),
+//     transition('expanded <=> collapsed, void => collapsed',
+//       animate(EXPANSION_PANEL_ANIMATION_TIMING)),
+//   ])];
+ 
 @NgModule({
   declarations: [
     AppComponent,
