@@ -77,6 +77,7 @@ import { ChildDetailsComponent } from './grid/child-details/child-details.compon
 import { SumPipe } from './grid/custom-data-grid/sum.pipe';
 import { ExpanderComponent } from './expander/expander.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -158,7 +159,8 @@ const modules = [
     GridParentComponent, 
     ChildDetailsComponent, 
     SumPipe, 
-    ExpanderComponent 
+    ExpanderComponent, 
+    ScrollToTopComponent 
   ],
   imports: [
     BrowserModule,
