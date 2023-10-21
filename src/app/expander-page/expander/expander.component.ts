@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import {
   animate,
   animateChild,
@@ -23,26 +23,27 @@ import {
   // ]);
 })
 export class ExpanderComponent implements OnInit {
-  shouldOpenPanel1 = true;
-  shouldOpenChildPanel1 = true;
+  @Input() expanderData: any = [];
+  expanderDataSource: any = [];
+
+  @Input() public expandedChildTemplate!: TemplateRef<any>;
 
   constructor() { }
 
   ngOnInit(): void {
+    if(this.expanderData?.length > 0) {
+      this.expanderDataSource = this.expanderData;
+    }
   }
 
-  onClickHeader($event) {
-    console.log("onClickHeader: ", $event);
-    console.log("shouldOpenChildPanel1: ", this.shouldOpenChildPanel1);
-  }
+  openGroup($event: any, i: number) {
+    this.expanderDataSource[i].hasChildExpander = true;
 
-  openGroup($event) {
-    this.shouldOpenChildPanel1 = true;
     console.log("openGroup: ", $event);
   }
 
-  closedGroup($event) {
-    this.shouldOpenChildPanel1 = false;
+  closedGroup($event: any, i: number) {
+    this.expanderDataSource[i].hasChildExpander = false;
     console.log("closedGroup: ", $event);
   }
 

@@ -75,10 +75,11 @@ import { GridChildComponent } from './grid/grid-child/grid-child.component';
 import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 import { ChildDetailsComponent } from './grid/child-details/child-details.component';
 import { SumPipe } from './grid/custom-data-grid/sum.pipe';
-import { ExpanderComponent } from './expander/expander.component';
+import { ExpanderComponent } from './expander-page/expander/expander.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { ScrollComponent } from './scroll/scroll.component';
+import { ExpanderPageComponent } from './expander-page/expander-page.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -161,7 +162,7 @@ const modules = [
     ChildDetailsComponent, 
     SumPipe, 
     ExpanderComponent, 
-    ScrollToTopComponent, ScrollComponent 
+    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent 
   ],
   imports: [
     BrowserModule,

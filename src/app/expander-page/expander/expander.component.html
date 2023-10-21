@@ -1,0 +1,29 @@
+<div class="container" *ngIf="expanderDataSource?.length > 0">
+    <mat-accordion [multi]="true">
+        <!--hideToggle [disabled]="true"-->
+        <mat-expansion-panel class="expansion-panel" *ngFor="let panel of expanderDataSource; let i=index" [expanded]="panel.isExpanded"><!--hideToggle [disabled]="true"-->
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{panel.panelTitle}}                    
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{panel.panelDescription}}
+                </mat-panel-description>                
+            </mat-expansion-panel-header>
+            
+            <mat-expansion-panel [expanded]="panel.isChildExpanded" (opened)="openGroup(panel.expanderName, i)" (closed)="closedGroup(panel.expanderName, i)">
+                <mat-expansion-panel-header class="child-header"></mat-expansion-panel-header>
+                <div class="child-body">
+                    <div class="child-title">{{panel.childTitle}}</div>
+                    <ng-container  [ngTemplateOutlet]="expandedChildTemplate" 
+                            [ngTemplateOutletContext]="{ $implicit: panel }"></ng-container>
+                </div>
+            </mat-expansion-panel>
+            
+            <mat-action-row *ngIf="!panel.hasChildExpander">
+                <div>{{panel.childTitle}}</div>
+                <div>{{panel.footerTitle}}</div>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

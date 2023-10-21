@@ -1,0 +1,8 @@
+<app-expander 
+    [expanderData]="expander"
+    [expandedChildTemplate]="expandedChildTemplate"
+></app-expander>
+
+<ng-template #expandedChildTemplate let-item>
+    {{item?.expanderName}}     
+</ng-template>  
