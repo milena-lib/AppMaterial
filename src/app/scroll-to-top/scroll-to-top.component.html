@@ -1,4 +1,4 @@
-<div class="scroll-to-top">
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
     <button type="button" class="btn active" data-toggle="button" (click)="scrollToTop()">
         <i class="fas fa-chevron-up" ></i>
     </button>
