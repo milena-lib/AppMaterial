@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Observable } from 'rxjs';
+import { Observable, fromEvent } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
+import { DOCUMENT, ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-cards',
@@ -75,4 +76,19 @@ export class CardsComponent implements OnInit {
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
+
+
+  // private readonly document = inject(DOCUMENT);
+  // private readonly viewport = inject(ViewportScroller);
+
+  // readonly showScroll$: Observable<boolean> = fromEvent(
+  //   this.document,
+  //   'scroll'
+  // ).pipe(
+  //   map(() => this.viewport.getScrollPosition()?.[1] > 0)
+  // );
+
+  // onScrollToTop(): void {
+  //   this.viewport.scrollToPosition([0, 0]);
+  // }
 }

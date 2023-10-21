@@ -1,10 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { environment } from 'src/environments/environment';
 import { HelperService } from './services/helper.service';
 
 import {MatButtonModule} from '@angular/material/button';
+import { Observable, fromEvent } from 'rxjs';
+import { DOCUMENT, ViewportScroller } from '@angular/common';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,4 +26,6 @@ export class AppComponent {
   onClick() {
     this.buttonClick.emit()
   }
+
+  
 }
