@@ -28,12 +28,19 @@ export class ExpanderComponent implements OnInit {
 
   @Input() public expandedChildTemplate!: TemplateRef<any>;
 
+  icon: boolean = false;
+
+
   constructor() { }
 
   ngOnInit(): void {
     if(this.expanderData?.length > 0) {
       this.expanderDataSource = this.expanderData;
     }
+  }
+
+  click(){
+    this.icon = !this.icon;
   }
 
   openGroup($event: any, i: number) {
