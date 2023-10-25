@@ -3,6 +3,7 @@
         <!--hideToggle [disabled]="true"-->
         <mat-expansion-panel class="expansion-panel" hideToggle="true" (click)="click()" *ngFor="let panel of expanderDataSource; let i=index" [expanded]="panel.isExpanded"><!--hideToggle [disabled]="true"-->
             <mat-expansion-panel-header>
+                <!-- https://stackoverflow.com/questions/47032090/how-to-position-the-angular-material-expansion-panel-arrow-icon-on-the-left-hand -->
                 <mat-panel-title>
                     <mat-icon>{{icon  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
                     <div>{{panel.panelTitle}}</div>                                        
