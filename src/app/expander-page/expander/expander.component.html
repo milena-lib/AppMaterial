@@ -6,6 +6,9 @@
                 <!-- https://stackoverflow.com/questions/47032090/how-to-position-the-angular-material-expansion-panel-arrow-icon-on-the-left-hand -->
                 <mat-panel-title>
                     <mat-icon>{{icon  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+                    <!-- <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+                        expand_more
+                    </mat-icon> -->
                     <div>{{panel.panelTitle}}</div>                                        
                 </mat-panel-title>
                 <mat-panel-description>
