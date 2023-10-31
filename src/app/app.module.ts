@@ -80,6 +80,13 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { ScrollComponent } from './scroll/scroll.component';
 import { ExpanderPageComponent } from './expander-page/expander-page.component';
+import { FormArrayValidationComponent } from './form-array-validation/form-array-validation.component';
+import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
+import { DealsComponent } from './nested-reactive-form/deals/deals.component';
+import { SimsComponent } from './nested-reactive-form/sims/sims.component';
+import { GroupControlComponent } from './nested-reactive-form/group-control/group-control.component';
+import { ConditionFormComponent } from './nested-reactive-form/condition-form/condition-form.component';
+import { ActionButtonsBarComponent } from './nested-reactive-form/action-buttons-bar/action-buttons-bar.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -162,7 +169,7 @@ const modules = [
     ChildDetailsComponent, 
     SumPipe, 
     ExpanderComponent, 
-    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent 
+    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, DealsComponent, SimsComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent 
   ],
   imports: [
     BrowserModule,

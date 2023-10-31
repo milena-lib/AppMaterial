@@ -16,6 +16,8 @@ import { DragDropDualListComponent } from './drag-and-drop2/drag-drop-dual-list/
 import { CarouselComponent } from './carousel/carousel.component';
 import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 import { ExpanderPageComponent } from './expander-page/expander-page.component';
+import { FormArrayValidationComponent } from './form-array-validation/form-array-validation.component';
+import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -33,6 +35,8 @@ const routes: Routes = [
   {path: 'drag-drop-dual-list', component: DragDropDualListComponent},
   {path: 'carousel', component: CarouselComponent},
   {path: 'expander', component: ExpanderPageComponent},
+  {path: 'form-array', component: FormArrayValidationComponent},
+  {path: 'nested-reactive-form', component: NestedReactiveFormComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
