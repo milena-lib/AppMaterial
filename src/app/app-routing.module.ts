@@ -20,6 +20,8 @@ import { FormArrayValidationComponent } from './form-array-validation/form-array
 import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
 import { SimpleNestedFormArrayComponent } from './simple-nested-form-array/simple-nested-form-array.component';
 import { CheckboxesFormArrayComponent } from './checkboxes-form-array/checkboxes-form-array.component';
+import { SearchDebounceComponent } from './search-debounce/search-debounce.component';
+import { SearchDebounceTimeComponent } from './search-debounce-time/search-debounce-time.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -41,6 +43,8 @@ const routes: Routes = [
   {path: 'nested-reactive-form', component: NestedReactiveFormComponent},
   {path: 'simple-nested-form-array', component: SimpleNestedFormArrayComponent},
   {path: 'checkboxes-form-array', component: CheckboxesFormArrayComponent},
+  {path: 'search-debounce', component: SearchDebounceComponent},
+  {path: 'search-debounce-time', component: SearchDebounceTimeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 

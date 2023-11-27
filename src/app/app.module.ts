@@ -89,6 +89,9 @@ import { SimpleNestedFormArrayComponent } from './simple-nested-form-array/simpl
 import { ChildFormComponent } from './simple-nested-form-array/child-form/child-form.component';
 import { CheckboxesFormArrayComponent } from './checkboxes-form-array/checkboxes-form-array.component';
 import { TestComponent } from './checkboxes-form-array/test/test.component';
+import { SearchDebounceComponent } from './search-debounce/search-debounce.component';
+import { ListViewerComponent } from './list-viewer/list-viewer.component';
+import { SearchDebounceTimeComponent } from './search-debounce-time/search-debounce-time.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -171,7 +174,8 @@ const modules = [
     ChildDetailsComponent, 
     SumPipe, 
     ExpanderComponent, 
-    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent, SimpleNestedFormArrayComponent, ChildFormComponent, CheckboxesFormArrayComponent, TestComponent 
+    ListViewerComponent,
+    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent, SimpleNestedFormArrayComponent, ChildFormComponent, CheckboxesFormArrayComponent, TestComponent, SearchDebounceComponent, SearchDebounceTimeComponent 
   ],
   imports: [
     BrowserModule,
