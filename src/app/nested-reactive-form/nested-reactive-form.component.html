@@ -13,7 +13,7 @@
   <strong>data:</strong> {{_data | json}}
     </pre>
   
-    <form [formGroup]="_form" style="border: 4px solid red">
+    <form [formGroup]="_form" (ngSubmit)="submitForm()" style="border: 4px solid red">
       <ng-container formArrayName="groups">
         <ng-container
           *ngFor="let group of _groupsFormArray?.controls; index as i"
@@ -26,6 +26,7 @@
           </app-group-control>
         </ng-container>
       </ng-container>
+      <button type="submit">Submit</button>
     </form>
   </div>
   <br />

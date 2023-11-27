@@ -1,0 +1,24 @@
+<form [formGroup]="_form" style="border: 4px solid blue">
+    <fieldset>
+      <div>
+        <app-action-buttons-bar
+          (remove)="remove.emit()"
+          (addCondition)="_addCondition()"
+        >
+        </app-action-buttons-bar>
+  
+        <ng-container formArrayName="conditions">
+          <app-condition-form
+            *ngFor="let c of _conditionsFormArray?.controls; index as j"
+            (remove)="_deleteCondition(j)"
+            [formControlName]="j"
+            [formLabel]="'Condition ' + (j + 1)"
+          >
+          </app-condition-form>
+        </ng-container>
+  
+        
+      </div>
+    </fieldset>
+  </form>
+  

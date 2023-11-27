@@ -82,11 +82,13 @@ import { ScrollComponent } from './scroll/scroll.component';
 import { ExpanderPageComponent } from './expander-page/expander-page.component';
 import { FormArrayValidationComponent } from './form-array-validation/form-array-validation.component';
 import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
-import { DealsComponent } from './nested-reactive-form/deals/deals.component';
-import { SimsComponent } from './nested-reactive-form/sims/sims.component';
 import { GroupControlComponent } from './nested-reactive-form/group-control/group-control.component';
 import { ConditionFormComponent } from './nested-reactive-form/condition-form/condition-form.component';
 import { ActionButtonsBarComponent } from './nested-reactive-form/action-buttons-bar/action-buttons-bar.component';
+import { SimpleNestedFormArrayComponent } from './simple-nested-form-array/simple-nested-form-array.component';
+import { ChildFormComponent } from './simple-nested-form-array/child-form/child-form.component';
+import { CheckboxesFormArrayComponent } from './checkboxes-form-array/checkboxes-form-array.component';
+import { TestComponent } from './checkboxes-form-array/test/test.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -169,7 +171,7 @@ const modules = [
     ChildDetailsComponent, 
     SumPipe, 
     ExpanderComponent, 
-    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, DealsComponent, SimsComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent 
+    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent, SimpleNestedFormArrayComponent, ChildFormComponent, CheckboxesFormArrayComponent, TestComponent 
   ],
   imports: [
     BrowserModule,

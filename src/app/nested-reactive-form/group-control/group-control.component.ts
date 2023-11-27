@@ -1,20 +1,5 @@
-import {
-  Component,
-  Input,
-  forwardRef,
-  Output,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  ChangeDetectorRef
-} from "@angular/core";
-import {
-  FormGroup,
-  FormBuilder,
-  FormArray,
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR
-} from "@angular/forms";
+import { Component, Input, forwardRef, Output, EventEmitter, OnDestroy, OnInit, ChangeDetectorRef } from "@angular/core";
+import { FormGroup, FormBuilder, FormArray, ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { ConditionFormComponent } from "../condition-form/condition-form.component";

@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <label formArrayName="recipients" *ngFor="let recipient of recipientsFormArray.controls; let i = index">
+      <input type="checkbox" [formControlName]="i" (change)="onCheckBoxTick($event, form.get('recipients.'+i), arrOfRecipients[i].name)">
+      {{arrOfRecipients[i].name}}
+    </label>
+  
+    <button style="margin-top: 20px" [disabled]="!form.valid">Submit</button>
+    <!-- <div formArrayName="recipients" *ngFor="let recipient of recipientsFormArray.controls; let i = index">
+      <app-test [formControlName]="i"></app-test>
+    </div> -->
+    
+</form>
+  

@@ -66,7 +66,7 @@ export class ConditionFormComponent implements OnInit, ControlValueAccessor, OnD
     if (!value) {
       return;
     }
-
+    debugger;
     this._form.patchValue(value);
   }
   registerOnChange(
@@ -93,6 +93,7 @@ export class ConditionFormComponent implements OnInit, ControlValueAccessor, OnD
 
   private _setupObservables() {
     this._form.valueChanges.pipe(takeUntil(this._destroy$)).subscribe(value => {
+      console.log("milena");
       if (this._onChange) {
         this._onChange(value);
       }

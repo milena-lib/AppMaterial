@@ -54,4 +54,8 @@ export class NestedReactiveFormComponent implements OnInit {
     });
   }
 
+  submitForm() {
+    console.log("submitForm: ", this._form.value);
+  }
+
 }

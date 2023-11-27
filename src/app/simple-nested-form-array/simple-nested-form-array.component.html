@@ -1,0 +1,15 @@
+<form [formGroup]="_form" (ngSubmit)="submitForm()" style="border: 4px solid red">
+    <ng-container formArrayName="groups">
+      <ng-container
+        *ngFor="let group of _groupsFormArray?.controls; index as i"
+      >
+        <app-child-form
+          (remove)="_delete(i)"
+          [formControlName]="i"
+          [formLabel]="'Group ' + (i + 1) + ':'"
+        >
+        </app-child-form>
+      </ng-container>
+    </ng-container>
+    <button type="submit">Submit</button>
+</form>

@@ -18,6 +18,8 @@ import { GridParentComponent } from './grid/grid-parent/grid-parent.component';
 import { ExpanderPageComponent } from './expander-page/expander-page.component';
 import { FormArrayValidationComponent } from './form-array-validation/form-array-validation.component';
 import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
+import { SimpleNestedFormArrayComponent } from './simple-nested-form-array/simple-nested-form-array.component';
+import { CheckboxesFormArrayComponent } from './checkboxes-form-array/checkboxes-form-array.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -37,6 +39,8 @@ const routes: Routes = [
   {path: 'expander', component: ExpanderPageComponent},
   {path: 'form-array', component: FormArrayValidationComponent},
   {path: 'nested-reactive-form', component: NestedReactiveFormComponent},
+  {path: 'simple-nested-form-array', component: SimpleNestedFormArrayComponent},
+  {path: 'checkboxes-form-array', component: CheckboxesFormArrayComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
