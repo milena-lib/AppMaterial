@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
   styleUrls: ['./multiple-file-upload.component.scss']
 })
 export class MultipleFileUploadComponent implements OnInit {
-  status: 'initial' | 'uploading' | 'success' | 'fail' = 'initial';
+  status: "initial" | "uploading" | "success" | "fail" = "initial";
   files: File[] = [];
 
   constructor(private http: HttpClient) {}
@@ -19,7 +19,7 @@ export class MultipleFileUploadComponent implements OnInit {
     const files = event.target.files;
 
     if (files.length) {
-      this.status = 'initial';
+      this.status = "initial";
       this.files = files;
     }
   }
@@ -29,19 +29,19 @@ export class MultipleFileUploadComponent implements OnInit {
       const formData = new FormData();
 
       [...this.files].forEach((file) => {
-        formData.append('file', file, file.name);
+        formData.append("file", file, file.name);
       });
 
-      const upload$ = this.http.post('https://httpbin.org/post', formData);
+      const upload$ = this.http.post("https://httpbin.org/post", formData);
 
-      this.status = 'uploading';
+      this.status = "uploading";
 
       upload$.subscribe({
         next: () => {
-          this.status = 'success';
+          this.status = "success";
         },
         error: (error: any) => {
-          this.status = 'fail';
+          this.status = "fail";
           return throwError(() => error);
         },
       });
