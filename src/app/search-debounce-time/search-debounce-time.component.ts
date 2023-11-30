@@ -14,12 +14,10 @@ const APIKEY = 'e8067b53';
 export class SearchDebounceTimeComponent implements OnInit {
   @ViewChild('movieSearchInput', { static: true })
   movieSearchInput!: ElementRef;
-  apiResponse: any;
-  isSearching: boolean;
+  apiResponse: any = [];
+  isSearching: boolean = false;
 
   constructor(private httpClient: HttpClient) {
-    this.isSearching = false;
-    this.apiResponse = [];
   }
 
   ngOnInit(): void {

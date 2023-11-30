@@ -22,6 +22,7 @@ import { SimpleNestedFormArrayComponent } from './simple-nested-form-array/simpl
 import { CheckboxesFormArrayComponent } from './checkboxes-form-array/checkboxes-form-array.component';
 import { SearchDebounceComponent } from './search-debounce/search-debounce.component';
 import { SearchDebounceTimeComponent } from './search-debounce-time/search-debounce-time.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path: 'checkboxes-form-array', component: CheckboxesFormArrayComponent},
   {path: 'search-debounce', component: SearchDebounceComponent},
   {path: 'search-debounce-time', component: SearchDebounceTimeComponent},
+  {path: 'file-upload', component: FileUploadComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 

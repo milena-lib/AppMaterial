@@ -92,6 +92,9 @@ import { TestComponent } from './checkboxes-form-array/test/test.component';
 import { SearchDebounceComponent } from './search-debounce/search-debounce.component';
 import { ListViewerComponent } from './list-viewer/list-viewer.component';
 import { SearchDebounceTimeComponent } from './search-debounce-time/search-debounce-time.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { SingleFileUploadComponent } from './file-upload/single-file-upload/single-file-upload.component';
+import { MultipleFileUploadComponent } from './file-upload/multiple-file-upload/multiple-file-upload.component';
 
 const modules = [
   ReactiveFormsModule,
@@ -175,7 +178,7 @@ const modules = [
     SumPipe, 
     ExpanderComponent, 
     ListViewerComponent,
-    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent, SimpleNestedFormArrayComponent, ChildFormComponent, CheckboxesFormArrayComponent, TestComponent, SearchDebounceComponent, SearchDebounceTimeComponent 
+    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent, SimpleNestedFormArrayComponent, ChildFormComponent, CheckboxesFormArrayComponent, TestComponent, SearchDebounceComponent, SearchDebounceTimeComponent, FileUploadComponent, SingleFileUploadComponent, MultipleFileUploadComponent 
   ],
   imports: [
     BrowserModule,
