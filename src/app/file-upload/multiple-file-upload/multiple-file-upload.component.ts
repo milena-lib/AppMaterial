@@ -20,7 +20,12 @@ export class MultipleFileUploadComponent implements OnInit {
 
     if (files.length) {
       this.status = "initial";
-      this.files = files;
+
+      for(let i=0; i<files.length; i++) {
+        this.files.push(files[i]);
+        console.log("file type: ", files[i].type);
+      }
+      // this.files = files;
     }
   }
 
@@ -30,6 +35,7 @@ export class MultipleFileUploadComponent implements OnInit {
 
       [...this.files].forEach((file) => {
         formData.append("file", file, file.name);
+        console.log("formData: ", formData.get("file"));
       });
 
       const upload$ = this.http.post("https://httpbin.org/post", formData);

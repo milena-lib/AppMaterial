@@ -95,8 +95,11 @@ import { SearchDebounceTimeComponent } from './search-debounce-time/search-debou
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { SingleFileUploadComponent } from './file-upload/single-file-upload/single-file-upload.component';
 import { MultipleFileUploadComponent } from './file-upload/multiple-file-upload/multiple-file-upload.component';
+import { UpdateNestedFormComponent } from './update-nested-form/update-nested-form.component';
+import { MainFormComponent } from './update-nested-form/main-form/main-form.component';
 
 const modules = [
+  FormsModule,
   ReactiveFormsModule,
   CdkTreeModule,
   MatAutocompleteModule,
@@ -178,7 +181,25 @@ const modules = [
     SumPipe, 
     ExpanderComponent, 
     ListViewerComponent,
-    ScrollToTopComponent, ScrollComponent, ExpanderPageComponent, FormArrayValidationComponent, NestedReactiveFormComponent, GroupControlComponent, ConditionFormComponent, ActionButtonsBarComponent, SimpleNestedFormArrayComponent, ChildFormComponent, CheckboxesFormArrayComponent, TestComponent, SearchDebounceComponent, SearchDebounceTimeComponent, FileUploadComponent, SingleFileUploadComponent, MultipleFileUploadComponent 
+    ScrollToTopComponent, 
+    ScrollComponent, 
+    ExpanderPageComponent, 
+    FormArrayValidationComponent, 
+    NestedReactiveFormComponent, 
+    GroupControlComponent, 
+    ConditionFormComponent, 
+    ActionButtonsBarComponent, 
+    SimpleNestedFormArrayComponent, 
+    ChildFormComponent, 
+    CheckboxesFormArrayComponent, 
+    TestComponent, 
+    SearchDebounceComponent, 
+    SearchDebounceTimeComponent, 
+    FileUploadComponent, 
+    SingleFileUploadComponent, 
+    MultipleFileUploadComponent, 
+    UpdateNestedFormComponent, 
+    MainFormComponent 
   ],
   imports: [
     BrowserModule,

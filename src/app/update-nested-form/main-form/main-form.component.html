@@ -1,0 +1,6 @@
+<div *ngFor="let item of productsFormArray.controls" [formGroup]="item">
+    <div>
+        Amount : <input formControlName="amount">
+    </div>
+    <hr>
+</div>
