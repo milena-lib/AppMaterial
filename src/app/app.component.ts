@@ -5,15 +5,15 @@ import { environment } from 'src/environments/environment';
 import { HelperService } from './services/helper.service';
 
 import {MatButtonModule} from '@angular/material/button';
-import { Observable, fromEvent } from 'rxjs';
+import { Observable, fromEvent, interval } from 'rxjs';
 import { DOCUMENT, ViewportScroller } from '@angular/common';
-import { map } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'AppMaterial';
   name = 'Angular';
 
@@ -23,8 +23,19 @@ export class AppComponent {
 
   constructor() {}
 
+  ngOnInit(): void {
+    const source = interval(1000);
+    const clicks = fromEvent(document, 'click');
+    const result = source.pipe(takeUntil(clicks));
+    result.subscribe(x => {
+      console.log(x)
+    });
+  }
+
   onClick() {
-    this.buttonClick.emit()
+    this.buttonClick.emit();
+    
+    
   }
 
   

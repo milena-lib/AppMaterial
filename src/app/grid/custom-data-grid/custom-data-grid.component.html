@@ -6,7 +6,23 @@
     <!-- <button (click)="onClickButton()">Click Me</button> -->
     <!-- columns length: {{columns?.length}} -->
     <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows  class="mat-elevation-z8">
-        
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()"
+                            [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null"
+                            [checked]="selection.isSelected(row)"
+                            [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+            </td>
+        </ng-container>
         <ng-container matColumnDef="{{column.dataField}}" *ngFor="let column of columns">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column.headerText}} </th>
             <td mat-cell *matCellDef="let row" [highlight]="row[column.dataField]">
@@ -46,15 +62,25 @@
             </td>
         </ng-container>
 
+        <!--header row-->
         <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+
+        <!--table row-->
         <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;"
             class="example-element-row"
             [class.example-expanded-row]="expandedElement === element"
             (click)="expandedElement = expandedElement === element ? null : element">
         </tr>
+
+        <!--expander row-->
         <ng-container *ngIf="showExpandbleRow">
             <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
         </ng-container>
+        <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)">
+        </tr> -->
+
+        <!--footer row-->
         <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
     </table>
   

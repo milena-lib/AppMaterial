@@ -7,6 +7,7 @@ import { IColumn } from '../i-column';
 import { ICustomGridModel } from '../i-custom-grid-model';
 import { GridColumnTypeEnum } from '../enums';
 import { HelperService } from 'src/app/services/helper.service';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-custom-data-grid',
@@ -52,6 +53,8 @@ export class CustomDataGridComponent implements OnInit {
 
   dataSourcePrev: Array<any>;
 
+  selection = new SelectionModel<any>(true, []);
+
   constructor(private helper: HelperService) { }
 
   ngOnInit(): void {
@@ -63,6 +66,7 @@ export class CustomDataGridComponent implements OnInit {
     this.displayedColumns.forEach((f: string) => {
       this.columnsToDisplayWithExpand.push(f);
     });
+    this.columnsToDisplayWithExpand.push('select');    
 
     // console.log("displayedColumns: ", this.displayedColumns);
     
@@ -123,6 +127,31 @@ export class CustomDataGridComponent implements OnInit {
     }
     return res;
 
+  }
+
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  toggleAllRows() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+      return;
+    }
+
+    this.selection.select(...this.dataSource.data);
+  }
+
+  /** The label for the checkbox on the passed row */
+  checkboxLabel(row?: any): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
   
 }
