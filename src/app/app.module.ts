@@ -97,6 +97,7 @@ import { SingleFileUploadComponent } from './file-upload/single-file-upload/sing
 import { MultipleFileUploadComponent } from './file-upload/multiple-file-upload/multiple-file-upload.component';
 import { UpdateNestedFormComponent } from './update-nested-form/update-nested-form.component';
 import { MainFormComponent } from './update-nested-form/main-form/main-form.component';
+import { DrawingComponent } from './drawing/drawing.component';
 
 const modules = [
   FormsModule,
@@ -199,7 +200,7 @@ const modules = [
     SingleFileUploadComponent, 
     MultipleFileUploadComponent, 
     UpdateNestedFormComponent, 
-    MainFormComponent 
+    MainFormComponent, DrawingComponent 
   ],
   imports: [
     BrowserModule,

@@ -24,6 +24,7 @@ import { SearchDebounceComponent } from './search-debounce/search-debounce.compo
 import { SearchDebounceTimeComponent } from './search-debounce-time/search-debounce-time.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { UpdateNestedFormComponent } from './update-nested-form/update-nested-form.component';
+import { DrawingComponent } from './drawing/drawing.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path: 'search-debounce-time', component: SearchDebounceTimeComponent},
   {path: 'file-upload', component: FileUploadComponent},
   {path: 'update-nested-form', component: UpdateNestedFormComponent},
+  {path: 'drawing', component: DrawingComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 

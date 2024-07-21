@@ -1,0 +1,57 @@
+.octagon {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    background: lime;
+    clip-path: polygon(16.6% 16.6%, 50% 0, 83.3% 16.6%, 100% 50%,
+                       83.3% 83.3%, 50% 100%, 16.6% 83.3%, 0 50%);
+  }
+
+  .custom-shape { 
+    width: 200px; 
+    height: 200px; 
+    position: relative; 
+    background-color: black; 
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+                       50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+
+.custom-shape::after { 
+    content: ""; 
+    width: 190px; 
+    height: 190px; 
+    position: absolute; 
+    background-color: #3498db; 
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,  
+                       50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); 
+} 
+
+.triangle {
+    width: 300px;
+    height: 300px;
+    position: relative; 
+    background: black;
+    // clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    // clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    clip-path: polygon(0 0, 0 100px, 90px 40px, 95px 35px, 95px 25px, 90px 20px);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    //border-radius: 50% / 100% 100% 0% 0%;
+    // aspect-ratio: 1;
+}
+
+// .triangle::after {
+//     content: "";    
+//     width: 290px;
+//     height: 290px;
+//     position: absolute; 
+//     background-color: #3498db;
+//     // clip-path: polygon(50% 0, 100% 100%, 0 100%);
+//     clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+//     //border-radius: 50% / 100% 100% 0% 0%;
+//     // aspect-ratio: 1;
+// }
